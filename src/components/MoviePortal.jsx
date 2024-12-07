@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { fetchMovies } from "../api/FetchMovies";
 import Card from "./Card";
 
@@ -6,7 +6,6 @@ const MoviePortal = () => {
   const [searchMovie, setSearchMovie] = useState("");
   const [message, setMessage] = useState([]);
   const [errMessage, setErrMessage] = useState(null);
-  const inputRef = useRef();
 
   const onSearchTextEnter = (e) => {
     e.preventDefault();
@@ -22,7 +21,6 @@ const MoviePortal = () => {
         className="  w-1/2 flex justify-center m-auto h-full"
       >
         <input
-          ref={inputRef}
           type="text"
           placeholder="Search Movie"
           value={searchMovie}
